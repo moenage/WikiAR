@@ -1,9 +1,10 @@
 import express from 'express';
 
-import { getInfoCards } from '../controllers/infoCards.js';
+import { getInfoCards, createInfoCard } from '../controllers/infoCards.js';
 
 const router = express.Router();
 
 router.get('/', getInfoCards);
+router.post('/', createInfoCard);
 
 export default router;
