@@ -1,6 +1,9 @@
 import React from 'react';
 
-const InfoCard = () => {
+import Styling from './styles';
+
+const InfoCard = () => {  
+    const classing = Styling();
     return(
         <h1>InfoCard</h1>
     );
