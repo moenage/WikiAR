@@ -1,10 +1,23 @@
 import express from 'express';
-import bodyparser from 'body-parser';
+import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import cors from 'corse';
+import cors from 'cors';
+
+import infoCardRoutes from './routes/info-cards.js';
 
 const app = express();
 
-app.use(bodyParser.json({ limit: "30mb", extended: true}));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
+app.use(bodyParser.json({ limit: '30mb', extended: true }))
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
+
+app.use('/info-cards', infoCardRoutes);
+
+const CONNECTION_URL = 'mongodb+srv://WikiAR:WikiAR2021@cluster0.nlirc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority+srv://WikiAR:WikiAR2021@cluster0.nlirc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const PORT = process.env.PORT|| 5000;
+
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
+  .catch((error) => console.log(`${error} did not connect`));
+
+mongoose.set('useFindAndModify', false);
