@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
 
+import { getInfoCards } from './actions/infoCards';
 import InfoCards from './components/InfoCards/InfoCards';
 import Form from './components/Form/Form';
-import ARicon from './images/ARicon.png';
+// import ARicon from './images/ARicon.png';
 import Styling from './styles';
 
 const App = () => {
     const classing = Styling();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getInfoCards());
+    }, [dispatch]);
 
     return (
         <Container maxWidth = "lg">
