@@ -1,9 +1,9 @@
 import express from 'express';
 
+import { getInfoCards } from '../controllers/info-cards.js';
+
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Test if works');
-});
+router.get('/', getInfoCards);
 
 export default router;
