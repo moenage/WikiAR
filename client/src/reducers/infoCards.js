@@ -4,7 +4,7 @@ export default (infoCards = [], action) => {
         case 'FETCH_ALL':
             return action.payload;
         case 'CREATE':
-            return infoCards;
+            return [...infoCards, action.payload];
         default:
             return infoCards;
     }

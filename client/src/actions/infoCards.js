@@ -12,3 +12,13 @@ export const getInfoCards = () => async (dispatch) => {
 
 };
 
+export const createInfoCard = (infoCard) => async (dispatch) => {
+    try {
+        const {data} = await applicationCache.createInfoCard(infoCard);
+
+        dispatch({type: 'CREATE', payload: data});
+    } catch (error) {
+        console.log(error);
+    }
+} 
+

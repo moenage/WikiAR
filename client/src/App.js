@@ -18,9 +18,9 @@ const App = () => {
 
     return (
         <Container maxWidth = "lg">
-            <AppBar classname={classing.AppBar} position="static" color="inherit">
-                <Typography classname={classing.heading} variant="h2" align="center">YOUR TITLE HERE</Typography>
-                {/* <img classname={classing.image} src={ARicon} alt="ARicon" height="30"/> */}
+            <AppBar className={classing.AppBar} position="static" color="inherit">
+                <Typography className={classing.heading} variant="h2" align="center">ARdventure</Typography>
+                {/* <img className={classing.image} src={ARicon} alt="ARicon" height="30"/> */}
             </AppBar>
             <Grow in>
                 <Container>

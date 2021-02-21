@@ -12,7 +12,7 @@ const InfoCards = ({ setCurrentId }) => {
     console.log(infoCards);
     return(
         <>
-        <h1 classname={classing.header}>InfoCards</h1>
+        <h1 className={classing.header}>InfoCards</h1>
         <InfoCard />
         <InfoCard />
         </>
