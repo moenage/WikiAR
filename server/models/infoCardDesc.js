@@ -1,4 +1,4 @@
-import monsgoose from 'mongoose';
+import mongoose from 'mongoose';
 
 const infoCardSchema = mongoose.Schema({
     title: String,
@@ -6,6 +6,6 @@ const infoCardSchema = mongoose.Schema({
     selectedFile: String,
 });
 
-const InfoCardDesc = mongoose.model('InfoCardDesc', inforCardSchema);
+const InfoCardDesc = mongoose.model('InfoCardDesc', infoCardSchema);
 
 export default InfoCardDesc;
