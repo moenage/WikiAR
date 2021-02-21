@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { getInfoCards } from '../controllers/info-cards.js';
+import { getInfoCards } from '../controllers/infoCards.js';
 
 const router = express.Router();
 

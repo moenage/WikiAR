@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-import infoCardRoutes from './routes/info-cards.js';
+import infoCardRoutes from './routes/infoCards.js';
 
 const app = express();
 
@@ -11,7 +11,7 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
-app.use('/info-cards', infoCardRoutes);
+app.use('/infoCards', infoCardRoutes);
 
 const CONNECTION_URL = 'mongodb+srv://WikiAR:WikiAR2021@cluster0.nlirc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority+srv://WikiAR:WikiAR2021@cluster0.nlirc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT|| 5000;
