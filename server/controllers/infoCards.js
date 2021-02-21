@@ -11,5 +11,16 @@ export const getInfoCards = async (req, res) => {
 }
 
 export const createInfoCard = (req, res) => {
-    res.send('Info Card Creation');
+    const infoCard = req.body;
+
+    const newInfoCard = new InfoCardDesc(infoCard);
+
+    try {
+        newInfoCard.save();
+
+        res.status(201).json(newInfoCard);
+    } catch (error) {
+        res.status(409).json({ message: error.message });
+        
+    }
 }
